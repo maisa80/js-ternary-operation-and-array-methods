@@ -1,36 +1,43 @@
 let isRaining = false;
+
 console.log("######## if-statement ########");
+const ifRaining = document.getElementById('if-raining');
+const ternaryRaining = document.getElementById('ternary-raining');
+const ifShining = document.getElementById('if-shining');
+const ternaryShining = document.getElementById('ternary-shining');
 
 if (isRaining) {
-    console.log('Stay home');
+
+    ifRaining.innerHTML = `<h3 class="alert alert-danger">Stay home</h3>`;
 } else {
-    console.log('Go out');
+
+    ifRaining.innerHTML = `<h3 class="alert alert-success">Go out</h3>`;
 }
 
 console.log("######## Ternary operation ########");
-isRaining 
-    ? console.log('Stay home') 
-    : console.log('Go out');
+isRaining
+    ? ternaryRaining.innerHTML = `<h3 class="alert alert-danger">Stay home</h3>`
+    : ternaryRaining.innerHTML = `<h3 class="alert alert-success">Go out</h3>`;
 
 
 let isSunShining = true;
 console.log("######## nested if-statement ########");
 if (isRaining) {
-    console.log('Stay home');
+    ifShining.innerHTML = `<h3 class="alert alert-danger">Stay home</h3>`
 } else {
     if (isSunShining) {
-        console.log('Go out for ice cream');
+        ifShining.innerHTML += `<h3 class="alert alert-success">Go out for ice cream</h3>`
     } else {
-        console.log('Go out for a walk');
+        ifShining.innerHTML +=`<h3>Go out for a walk</h3>`;
     }
 }
 
 console.log("######## Nested Ternary operation ########");
-isRaining 
-    ? console.log('Stay home') 
-    : isSunShining 
-        ? console.log('Go out for ice cream') 
-        : console.log('Go out for a walk');
+isRaining
+    ? ternaryShining.innerHTML = `<h3 class="alert alert-danger">Stay home</h3>`
+    : isSunShining
+        ? ternaryShining.innerHTML += `<h3 class="alert alert-success">Go out for ice cream</h3>`
+        : ternaryShining.innerHTML +=`<h3>Go out for a walk</h3>`;
 
 
 
@@ -50,10 +57,10 @@ console.log(string);
 
 
 console.log("######## Nested Ternary operation, with assignment ########");
-string = isRaining 
-    ? 'Stay home' 
-    : isSunShining 
-        ? 'Go out for ice cream' 
+string = isRaining
+    ? 'Stay home'
+    : isSunShining
+        ? 'Go out for ice cream'
         : 'Go out for a walk';
 
 
